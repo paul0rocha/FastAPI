@@ -1,11 +1,9 @@
 from typing import Union
-
 import httpx
 from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel
 
 app = FastAPI()
-
 
 class Item(BaseModel):
     name: str
@@ -54,8 +52,6 @@ async def post_write_data(field_value: int):
 
 
 
-
-
 class ThingSpeakData(BaseModel):
     field1: int
     field2: int
@@ -94,19 +90,20 @@ async def post_write_data(field1_value: int, field2_value: int, field3_value: in
         }
     else:
         raise HTTPException(status_code=response.status_code, detail="Failed to write data to ThingSpeak")
-    
 
-class ThingSpeakData(BaseModel):
+
+
+class ThingSpeakDatas(BaseModel):
     field1: int
 
 @app.post("/thingspeak/write")
-async def write_to_thingspeak(data: ThingSpeakData):
+async def write_to_thingspeaks(data: ThingSpeakDatas):
     field1_value = data.field1
 
-    result = await post_write_data(field1_value)
+    result = await post_write_datas(field1_value)
     return result
 
-async def post_write_data(field1_value: int):
+async def post_write_datas(field1_value: int):
     url = f"https://api.thingspeak.com/update?api_key=WJPE65B0OQBNRXXV"
     json_payload = {
         "field1": field1_value
