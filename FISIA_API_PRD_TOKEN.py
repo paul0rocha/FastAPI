@@ -1,3 +1,16 @@
+### Link PRD https://dsc.api.dhl.com/dhllink/emissao
+### Acess Token https://dsc.api.dhl.com/dhllink/auth/token
+
+### Client ID 3bjSWcQhUHZ80fTzEaZ2KPM55OiHUoIh
+### Client Secret UKKCLqxSvYEegDgC
+
+
+### Link PRJ https://dsc.api-sandbox.dhl.com/dhllink/emissao
+
+
+### METOD this User  Username Ayv7GsSMMAJBV8QTrQUftZF4xz6dv3nQ and Password mb0nQVsY8vmrkEmQ
+
+
 import zipfile
 import json
 import os
